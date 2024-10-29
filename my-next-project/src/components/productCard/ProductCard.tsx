@@ -1,8 +1,9 @@
 import React from 'react';
 import './ProductCard.scss';
 import Ratings from '../ratings/Ratings';
-import PriceTag from '../priceTag/PriceTag'; // Import the PriceTag component
 import { Product } from '@/types/products/product'; 
+import PriceTag from '../priceTag/PriceTag';
+import AddButton from '../buttons/AddButton';
 
 interface ProductCardProps {
   product: Product;
@@ -23,8 +24,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <h3 className="product-name" style={{ color: product.color }}>
           {product.name}
         </h3>
+
+          <Ratings rating={product.rating} />
         
-        <Ratings rating={product.rating} />
+          <AddButton color={product.color} />
+
       </div>
     </div>
   );

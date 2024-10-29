@@ -1,1 +1,20 @@
-@import './variables.scss';
+@import '../../styles/variables.scss'; 
+
+.add-button {
+    max-width: 184px;
+    max-height: 40px;
+    width: 100%;                
+    color: $white;              
+    border: none;               
+    border-radius: $radius-m;   
+    padding: 10px;
+    font-size: 1em;             
+    cursor: pointer;            
+    transition: background-color, color 0.3s; 
+    margin-top: 0.825rem;
+
+    &:hover {
+        opacity: 0.9;
+        color: $black;         
+    }
+}

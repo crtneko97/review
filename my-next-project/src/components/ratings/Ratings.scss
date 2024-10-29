@@ -9,17 +9,16 @@
 
   p{
     font-size: $rating-font-size;
-    padding: 0.5rem;
     font-weight: 500;
   }
 
   .stars {
-    display: flex; // Use flex to align stars in a row
-    gap: 0.2rem; // Space between stars
+    display: flex;
+    gap: 0.2rem;
   }
 
   svg {
-    width: 10px; // Set width of the star icon
-    height: auto; // Maintain aspect ratio
+    width: 10px;
+    height: auto;
   }
 }
