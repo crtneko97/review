@@ -1,1 +1,35 @@
-@import './variables.scss';
+@import '../../styles/variables.scss';
+
+.product-card {
+    max-height: $product-card-max-height;
+    max-width: $product-card-max-width;       
+    background-color: $white;
+    border-radius: $radius-s; 
+    overflow: hidden;        
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    display: flex;           
+    flex-direction: column;  
+    position: relative;      
+}
+  
+.product-image {
+    width: 100%;            
+    height: auto;          
+    max-height: 150px;     
+    object-fit: cover;      
+}
+  
+.product-info {
+    padding: 10px;         
+    text-align: center;    
+  
+.product-name {
+    font-size: 1.2em;      
+    margin: 10px 0;       
+}
+  
+.rating {
+    margin: 5px 0;       
+}
+
+}
