@@ -2,33 +2,37 @@
 
 .product-card {
     max-height: $product-card-max-height;
-    max-width: $product-card-max-width;       
+    max-width: $product-card-max-width;
     background-color: $white;
-    border-radius: $radius-s; 
-    overflow: hidden;        
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-    display: flex;           
-    flex-direction: column;  
+    border-radius: $radius-s;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
     position: relative;
     gap: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: rotate(-2deg) translate(-5px, -5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
 
     .product-image {
-        position: relative; 
-        width: 100%;   
-        height: auto;   
-        max-height: 150px;  
+        position: relative;
+        width: 100%;
+        height: auto;
+        max-height: 150px;
         object-fit: cover;
     }
       
     .product-info {
-        padding: 8px;         
+        padding: 8px;
         text-align: center;
     }
-    
-    
+
     .product-name {
-        font-size: 12px;      
-        margin: 10px 0;       
+        font-size: 12px;
+        margin: 10px 0;
     }
 }
-  

@@ -19,6 +19,48 @@
       "price": 90000,
       "imageUrl": "/images/Product3.svg",
       "color": "#009760"
+    },
+    {
+      "name": "Saving & Cost avoidance",
+      "rating": 4.0,
+      "price": 90000,
+      "imageUrl": "/images/Product1.svg",
+      "color": "#DC840A"
+    },
+    {
+      "name": "Code of Conduct",
+      "rating": 4.0,
+      "price": 90000,
+      "imageUrl": "/images/Product2.svg",
+      "color": "#1A364C"
+    },
+    {
+      "name": "ESG measurement",
+      "rating": 4.0,
+      "price": 90000,
+      "imageUrl": "/images/Product3.svg",
+      "color": "#009760"
+    },
+    {
+      "name": "Saving & Cost avoidance",
+      "rating": 4.0,
+      "price": 90000,
+      "imageUrl": "/images/Product1.svg",
+      "color": "#DC840A"
+    },
+    {
+      "name": "Code of Conduct",
+      "rating": 4.0,
+      "price": 90000,
+      "imageUrl": "/images/Product2.svg",
+      "color": "#1A364C"
+    },
+    {
+      "name": "ESG measurement",
+      "rating": 4.0,
+      "price": 90000,
+      "imageUrl": "/images/Product3.svg",
+      "color": "#009760"
     }
   ]
   

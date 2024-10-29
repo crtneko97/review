@@ -1,4 +1,7 @@
 'use client';
+import '../styles/globals.scss';
+
+
 import React, { useEffect, useState } from 'react';
 import ProductCard from '../components/productCard/ProductCard';
 import { Product } from '../types/products/product';
@@ -28,11 +31,11 @@ const Home = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div>
+    <main>
       {products.map((product, index) => (
         <ProductCard key={index} product={product} />
       ))}
-    </div>
+    </main>
   );
 };
 

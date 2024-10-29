@@ -13,9 +13,29 @@ body {
 }
 
 main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  align-items: start;     
+  gap: $radius-s;
   min-height: 100vh;
-  text-align: center;
+  max-width: 50%;
+  padding: 20px;
+  margin: 0 auto;         
+  text-align: center;     
+
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  justify-items: center;
+
+  // fix later on
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  // fix later on
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+  // fix later on
+  @media (max-width: 576px) {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
 }
