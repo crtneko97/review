@@ -1,20 +1,20 @@
 [
     {
-      "name": "Product 1",
+      "name": "Saving & Cost avoidance",
       "rating": 4.0,
       "price": 90000,
       "imageUrl": "/images/Product1.svg",
       "color": "#DC840A"
     },
     {
-      "name": "Product 2",
+      "name": "Code of Conduct",
       "rating": 4.0,
       "price": 90000,
       "imageUrl": "/images/Product2.svg",
       "color": "#1A364C"
     },
     {
-      "name": "Product 3",
+      "name": "ESG measurement",
       "rating": 4.0,
       "price": 90000,
       "imageUrl": "/images/Product3.svg",

@@ -1,22 +1,37 @@
-import React from 'react';
-import ProductCard from '@/components/productCard/ProductCard';
-import { Product } from '@/types/products/product';
+'use client';
+import React, { useEffect, useState } from 'react';
+import ProductCard from '../components/productCard/ProductCard';
+import { Product } from '../types/products/product';
+import { fetchProducts } from '../services/products/productService';
 
 const Home = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-//Check if it works
-  const p1: Product = {
-    name: 'Product 1',
-    rating: 4.0,
-    price: 90000,
-    imageUrl: '/images/Product1.svg',
-    color: '#DC840A'
-  };
+  useEffect(() => {
+    const loadProducts = async () => {
+      try {
+        const fetchedProducts = await fetchProducts();
+        setProducts(fetchedProducts);
+        setLoading(false);
+      } catch (err) {
+        setError('Failed to load products');
+        setLoading(false);
+      }
+    };
+
+    loadProducts();
+  }, []);
+
+  if (loading) return <p>Loading products...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <div>
-      <ProductCard product={p1} />
-    
+      {products.map((product, index) => (
+        <ProductCard key={index} product={product} />
+      ))}
     </div>
   );
 };
