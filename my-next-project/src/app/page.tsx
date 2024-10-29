@@ -9,7 +9,7 @@ const Home = () => {
     name: 'Product 1',
     rating: 4.0,
     price: 90000,
-    imageUrl: '/images/Product1.png',
+    imageUrl: '/images/Product1.svg',
     color: '#DC840A'
   };
 
