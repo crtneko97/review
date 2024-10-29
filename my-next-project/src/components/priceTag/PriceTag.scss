@@ -1,0 +1,13 @@
+@import '../../styles/variables.scss';
+
+.price-tag {
+    position: absolute; 
+    bottom: -5px; 
+    right: 5px;        
+    background-color: $white;
+    border-radius: $radius-m; 
+    padding: 10px 7px;
+    font-size: $price-font-size;
+    font-weight: 600;
+    color: $price-font-color;
+}
