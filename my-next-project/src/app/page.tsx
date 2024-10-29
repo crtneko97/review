@@ -1,9 +1,11 @@
 import React from 'react'
-
+import Ratings from '@/components/ratings/Ratings';
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <Ratings rating={4} />
+    </div>
   )
 }
 
