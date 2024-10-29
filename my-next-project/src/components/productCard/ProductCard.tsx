@@ -27,7 +27,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
           <Ratings rating={product.rating} />
         
-          <AddButton color={product.color} />
+          <AddButton text={"ADD TO CART"}color={product.color} />
 
       </div>
     </div>

@@ -1,8 +1,8 @@
 @import '../../styles/variables.scss';
 
 .product-card {
-    max-height: $product-card-max-height;
-    max-width: $product-card-max-width;
+    min-height: $product-card-max-height;
+    min-width: $product-card-max-width;
     background-color: $white;
     border-radius: $radius-s;
     overflow: hidden;
@@ -31,8 +31,8 @@
         text-align: center;
     }
 
-    .product-name {
+    h3 {
         font-size: 12px;
-        margin: 10px 0;
+        font-weight: bold;
     }
 }
