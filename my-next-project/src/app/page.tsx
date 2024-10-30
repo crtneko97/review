@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import ProductCard from '../components/productCard/ProductCard';
 import { Product } from '../types/products/product';
 import { fetchProducts } from '../services/products/productService';
+import Navbar from '@/components/navbar/Navbar';
 
 const Home = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -31,11 +32,14 @@ const Home = () => {
   if (error) return <p>{error}</p>;
 
   return (
+    <>
+      <Navbar />
     <main>
       {products.map((product, index) => (
         <ProductCard key={index} product={product} />
       ))}
     </main>
+    </>
   );
 };
 
