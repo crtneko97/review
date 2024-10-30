@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss'; 
+@import '../../../styles/variables.scss'; 
 
 .add-button {
     max-width: 184px;
@@ -10,7 +10,7 @@
     padding: 10px;
     cursor: pointer;            
     transition: background-color, color 0.3s; 
-    margin-top: 0.825rem;
+    margin-top: 0.5rem;
 
     .btn-text{
         font-size: 10px;

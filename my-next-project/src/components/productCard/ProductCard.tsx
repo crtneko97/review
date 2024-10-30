@@ -3,7 +3,7 @@ import './ProductCard.scss';
 import Ratings from '../ratings/Ratings';
 import { Product } from '../../types/products/product'; 
 import PriceTag from '../priceTag/PriceTag';
-import AddButton from '../buttons/AddButton';
+import AddButton from '../buttons/addbutton/AddButton';
 
 interface ProductCardProps {
   product: Product;
