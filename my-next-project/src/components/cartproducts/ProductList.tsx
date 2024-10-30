@@ -6,6 +6,8 @@ interface ProductListProps {
   products: Product[];
 }
 
+
+//Instead of this component the productCard component should be in use.. WIP
 const ProductList: React.FC<ProductListProps> = ({ products }) => {
   return (
     <table className="product-list">
