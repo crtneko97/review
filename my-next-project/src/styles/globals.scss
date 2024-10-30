@@ -13,15 +13,20 @@ body {
 }
 
 main {
-  display: grid;
-  align-items: start;     
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: $radius-s;
   min-height: 100vh;
-  max-width: 100%;
+  max-width: 80%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
   padding: 20px;
-  margin: 0 auto;         
-  text-align: center;     
-
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  justify-items: center;
+  margin: 0 auto;
+  text-align: center;
+  flex-wrap: wrap; 
+  
+  @media (max-width: 890px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }

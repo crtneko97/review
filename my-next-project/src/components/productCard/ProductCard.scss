@@ -3,6 +3,9 @@
 .product-card {
     min-height: $product-card-max-height;
     min-width: $product-card-max-width;
+    max-height: $product-card-max-height;
+    max-width: $product-card-max-width;
+
     background-color: $white;
     border-radius: $radius-s;
     overflow: hidden;
