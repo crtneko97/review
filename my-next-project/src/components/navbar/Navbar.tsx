@@ -13,10 +13,7 @@ const Navbar: React.FC<NavbarProps> = ({ cart }) => {
       <div className="navbar__logo">
         <p>Review</p>
       </div>
-      <CartButton />
-      <div className="navbar__cart-count">
-        {cart.length}
-      </div>
+      <CartButton cartCount={cart.length} />
     </nav>
   );
 };

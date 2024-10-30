@@ -12,6 +12,7 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Load products and cart data when the component mounts
   useEffect(() => {
     const loadProducts = async () => {
       try {
@@ -24,9 +25,16 @@ const Home = () => {
       }
     };
 
+    // Load initial cart from session storage
+    const storedCart = sessionStorage.getItem('cart');
+    if (storedCart) {
+      setCart(JSON.parse(storedCart));
+    }
+
     loadProducts();
   }, []);
 
+  // Handle adding a product to the cart
   const handleAddToCart = (product: Product) => {
     setCart((prevCart) => {
       const updatedCart = [...prevCart, product];
@@ -34,7 +42,6 @@ const Home = () => {
       return updatedCart;
     });
   };
-  
 
   if (loading) return <p>Loading products...</p>;
   if (error) return <p>{error}</p>;
@@ -42,10 +49,10 @@ const Home = () => {
   return (
     <>
       <Navbar cart={cart} />
-      <main>
-        {products.map((product, index) => (
+      <main className="home-page">
+        {products.map((product) => (
           <ProductCard
-            key={index}
+            key={product.id}  // Assuming each product has a unique 'id'
             product={product}
             onAddToCart={handleAddToCart}
           />

@@ -1,19 +1,58 @@
 @import '../../../styles/variables.scss';
 
 .cart-button {
+  position: relative;
   margin: 1rem;
   font-size: 1.3rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: transparent;
+  color: $black;
+  text-decoration: none;
   cursor: pointer;
-
-  icon{
-
-  }
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     transform: rotate(-2deg) translate(-5px, -5px);
-    background-color: transparent;
+    color: darken($black, 10%);
   }
 
+  &__icon {
+    color: $black;
+    transition: color 0.3s ease;
+  }
+
+  &__count {
+    position: absolute;
+    top: -15px;
+    right: -20px;
+    background-color: transparent;
+    color: $black;
+    border-radius: 50%;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 0.2rem 0.5rem;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+
+    &.cart-count-update {
+      animation: pop 0.3s ease-in-out;
+    }
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
