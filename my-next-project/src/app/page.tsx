@@ -17,7 +17,7 @@ const Home = () => {
       try {
         const fetchedProducts = await fetchProducts();
         setProducts(fetchedProducts);
-        setLoading(false);
+        setLoading(false); 
       } catch (err) {
         setError('Failed to load products');
         setLoading(false);
@@ -28,8 +28,13 @@ const Home = () => {
   }, []);
 
   const handleAddToCart = (product: Product) => {
-    setCart((prevCart) => [...prevCart, product]);
+    setCart((prevCart) => {
+      const updatedCart = [...prevCart, product];
+      sessionStorage.setItem('cart', JSON.stringify(updatedCart));
+      return updatedCart;
+    });
   };
+  
 
   if (loading) return <p>Loading products...</p>;
   if (error) return <p>{error}</p>;
