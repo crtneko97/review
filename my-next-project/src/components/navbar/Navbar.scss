@@ -3,7 +3,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    justify-content: center;
     border-radius: $radius-s;
+    margin: 1rem;
+    gap: 4px;
     width: 100%;
     background-color: transparent;
   
@@ -15,5 +18,12 @@
       }
     }
 
+    
   }
+  .navbar__cart-count {
+    margin: 1rem;
+    font-size: 1.2rem;
+    color: $black;
+  }
+  
   

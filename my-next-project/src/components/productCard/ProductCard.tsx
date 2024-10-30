@@ -7,16 +7,14 @@ import AddButton from '../buttons/addbutton/AddButton';
 
 interface ProductCardProps {
   product: Product;
+  onAddToCart: (product: Product) => void; // Add this prop
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
   return (
     <div className="product-card">
       <div className="product-image">
-        <img
-          src={product.imageUrl}
-          alt={product.name}
-        />
+        <img src={product.imageUrl} alt={product.name} />
         <PriceTag price={product.price} />
       </div>
       
@@ -25,10 +23,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           {product.name}
         </h3>
 
-          <Ratings rating={product.rating} />
+        <Ratings rating={product.rating} />
         
-          <AddButton text={"ADD TO CART"}color={product.color} />
-
+        {/* Pass the product to AddButton's onClick through onAddToCart */}
+        <AddButton
+          text="ADD TO CART"
+          color={product.color}
+          onClick={() => onAddToCart(product)}
+        />
       </div>
     </div>
   );

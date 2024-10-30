@@ -1,15 +1,14 @@
 'use client';
-import '../styles/globals.scss';
-
-
 import React, { useEffect, useState } from 'react';
+import '../styles/globals.scss';
+import Navbar from '../components/navbar/Navbar';
 import ProductCard from '../components/productCard/ProductCard';
 import { Product } from '../types/products/product';
 import { fetchProducts } from '../services/products/productService';
-import Navbar from '@/components/navbar/Navbar';
 
 const Home = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [cart, setCart] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -28,17 +27,25 @@ const Home = () => {
     loadProducts();
   }, []);
 
+  const handleAddToCart = (product: Product) => {
+    setCart((prevCart) => [...prevCart, product]);
+  };
+
   if (loading) return <p>Loading products...</p>;
   if (error) return <p>{error}</p>;
 
   return (
     <>
-      <Navbar />
-    <main>
-      {products.map((product, index) => (
-        <ProductCard key={index} product={product} />
-      ))}
-    </main>
+      <Navbar cart={cart} />
+      <main>
+        {products.map((product, index) => (
+          <ProductCard
+            key={index}
+            product={product}
+            onAddToCart={handleAddToCart}
+          />
+        ))}
+      </main>
     </>
   );
 };
