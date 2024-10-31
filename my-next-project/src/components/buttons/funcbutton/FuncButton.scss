@@ -1,15 +1,25 @@
-// src/components/Button/Button.scss
+@import '../../../styles/variables.scss';
+
 .custom-button {
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 1rem;
-    padding: 0.5rem;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+  max-width: 60px;
+  max-height: 40px;
+  width: 100%;                
+  color: $black;              
+  border: none;               
+  border-radius: $radius-s;   
+  padding: 10px;
+  cursor: pointer;            
+  transition: background-color 0.8s ease, color 0.8s ease-in; 
+  margin-top: 0.5rem;
+
+  .btn-text{
+    font-size: 10px;
+    line-height: 150%;
+    font-weight: bold;          
+}
+  &:hover {
+      opacity: 0.9;
+      color: $white;  
+      background-color: black;       
   }
-  
-  .custom-button:hover {
-    background-color: darken(color, 10%);
   }
-  

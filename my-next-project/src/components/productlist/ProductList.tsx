@@ -1,4 +1,3 @@
-// src/components/ProductList/ProductList.tsx
 import React from 'react';
 import './ProductList.scss';
 import { Product } from '../../types/product';
@@ -28,9 +27,6 @@ const ProductList: React.FC<ProductListProps> = ({ products, onRemove }) => {
             <td className="product-list__cell">{product.rating}</td>
             <td className="product-list__cell">
               <FuncButton
-                color="red"
-                height="30px"
-                width="80px"
                 onClick={() => onRemove(product.uuid)}
                 text="Remove"
               />

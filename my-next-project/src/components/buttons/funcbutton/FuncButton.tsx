@@ -1,22 +1,24 @@
 // src/components/Button/Button.tsx
 import React from 'react';
+import './FuncButton.scss';
+
 
 interface FuncButtonProps {
-  color?: string;
   height?: string;
   width?: string;
   onClick?: () => void;
   text?: string;
 }
 
-const FuncButton: React.FC<FuncButtonProps> = ({ color, height, width, onClick, text }) => {
+const FuncButton: React.FC<FuncButtonProps> = ({  height, width, onClick, text }) => {
   return (
     <button
-      style={{ backgroundColor: color, height, width }}
+      style={{ backgroundColor: height, width }}
       onClick={onClick}
       className="custom-button"
     >
-      {text}
+      <span className="btn-text">{text}</span>
+
     </button>  
   );
 };
