@@ -1,3 +1,5 @@
+// src/app/page.tsx
+
 'use client';
 import React, { useEffect, useState } from 'react';
 import '../styles/globals.scss';
@@ -5,14 +7,18 @@ import Navbar from '../components/navbar/Navbar';
 import ProductCard from '../components/productCard/ProductCard';
 import { Product } from '../types/products/product';
 import { fetchProducts } from '../services/products/productService';
+import { v4 as uuidv4 } from 'uuid';
+
+interface CartItem extends Product {
+  uuid: string; // Unique identifier for cart items
+}
 
 const Home = () => {
   const [products, setProducts] = useState<Product[]>([]);
-  const [cart, setCart] = useState<Product[]>([]);
+  const [cart, setCart] = useState<CartItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Load products and cart data when the component mounts
   useEffect(() => {
     const loadProducts = async () => {
       try {
@@ -36,8 +42,10 @@ const Home = () => {
 
   // Handle adding a product to the cart
   const handleAddToCart = (product: Product) => {
+    const cartItem = { ...product, uuid: uuidv4() }; // Add a unique ID to the product
+
     setCart((prevCart) => {
-      const updatedCart = [...prevCart, product];
+      const updatedCart = [...prevCart, cartItem];
       sessionStorage.setItem('cart', JSON.stringify(updatedCart));
       return updatedCart;
     });

@@ -1,22 +1,20 @@
+// src/components/ProductList/ProductList.tsx
 import React from 'react';
 import './ProductList.scss';
 import { Product } from '../../types/products/product';
+import FuncButton from '../buttons/funcbutton/FuncButton';
 
 interface ProductListProps {
   products: Product[];
+  onRemove: (productId: string) => void;
 }
 
-
-//Instead of this component the productCard component should be in use.. WIP
-const ProductList: React.FC<ProductListProps> = ({ products }) => {
+const ProductList: React.FC<ProductListProps> = ({ products, onRemove }) => {
   return (
     <table className="product-list">
       <thead className="product-list__header">
         <tr>
-          <th>Image</th>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Rating</th>
+          <th>Image</th><th>Name</th><th>Price</th><th>Rating</th><th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -28,6 +26,15 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
             <td className="product-list__cell">{product.name}</td>
             <td className="product-list__cell">${product.price}</td>
             <td className="product-list__cell">{product.rating}</td>
+            <td className="product-list__cell">
+              <FuncButton
+                color="red"
+                height="30px"
+                width="80px"
+                onClick={() => onRemove(product.uuid)}
+                text="Remove"
+              />
+            </td>
           </tr>
         ))}
       </tbody>
