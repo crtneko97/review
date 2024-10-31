@@ -1,7 +1,7 @@
 import React from 'react';
 import './Navbar.scss';
 import CartButton from '../buttons/cartbutton/CartButton';
-import { Product } from '../../types/products/product';
+import { Product } from '../../types/product';
 
 interface NavbarProps {
   cart: Product[];

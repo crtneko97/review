@@ -1,7 +1,7 @@
 // src/pages/CartPage.tsx
 'use client';
 import React, { useEffect, useState } from 'react';
-import { Product } from '../../types/products/product';
+import { Product } from '../../types/product';
 import ProductList from '../../components/productlist/ProductList';
 
 // Extend the Product interface to include uuid

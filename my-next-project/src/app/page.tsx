@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import '../styles/globals.scss';
 import Navbar from '../components/navbar/Navbar';
 import ProductCard from '../components/productCard/ProductCard';
-import { Product } from '../types/products/product';
+import { Product } from '../types/product';
 import { fetchProducts } from '../services/products/productService';
 import { v4 as uuidv4 } from 'uuid';
 

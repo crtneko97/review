@@ -1,5 +1,5 @@
 'use client';
-import { Product } from '../../types/products/product';
+import { Product } from '../../types/product';
 
 export const fetchProducts = async (): Promise<Product[]> => {
   const response = await fetch('/json/products.json');

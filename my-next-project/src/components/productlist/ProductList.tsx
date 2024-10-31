@@ -1,7 +1,7 @@
 // src/components/ProductList/ProductList.tsx
 import React from 'react';
 import './ProductList.scss';
-import { Product } from '../../types/products/product';
+import { Product } from '../../types/product';
 import FuncButton from '../buttons/funcbutton/FuncButton';
 
 interface ProductListProps {
