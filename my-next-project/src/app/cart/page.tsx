@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import ProductList from '../../components/cartproducts/ProductList';
 import { Product } from '../../types/products/product';
+import ProductList from '../../components/productlist/ProductList';
 
 const CartPage = () => {
   const [cart, setCart] = useState<Product[]>([]);
