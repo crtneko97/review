@@ -1,11 +1,10 @@
-'use client';
-import { Product } from '../../types/product';
 
-export const fetchProducts = async (): Promise<Product[]> => {
-  const response = await fetch('/json/products.json');
+import { Product } from '@/types/product';
+
+export async function fetchProducts(): Promise<Product[]> {
+  const response = await fetch('/api/products');
   if (!response.ok) {
     throw new Error('Failed to fetch products');
   }
-  const data: Product[] = await response.json();
-  return data;
-};
+  return response.json();
+}
