@@ -43,4 +43,4 @@ The project is organized with a clear separation of assets, components, and appl
 
 
 
-```plaintext
+```
